@@ -146,4 +146,81 @@ public class CalculatorTests {
 
         assertEquals(5, quotient);
     }
+    @DisplayName("multiply two numbers")
+    public void testMultiplication() {
+        final Integer product = Calculator.multiply(2, 4);
+        assertEquals(8, product);
+    }
+
+    @Test
+    @DisplayName("multiply two positive numbers") //multiplying two positive numbers
+    public void testMultiplyPositiveNumbers() {
+        final Integer product = Calculator.multiply(5, 3);
+        assertEquals(15, product);
+    }
+    
+    @Test
+    @DisplayName("multiply a positive number with zero") // multiplying a positive number with zero
+    public void testMultiplyPositiveWithZero() {
+        final Integer product = Calculator.multiply(5, 0);
+        assertEquals(0, product);
+    }
+    
+    @Test
+    @DisplayName("multiply two negative numbers") // multiplying two negative number
+    public void testMultiplyNegativeNumbers() {
+        final Integer product = Calculator.multiply(-5, -3);
+        assertEquals(15, product);
+    }
+    
+    @Test
+    @DisplayName("multiply a positive and a negative number") // multiplying a postive number and a negative number
+    public void testMultiplyPositiveAndNegative() {
+        final Integer product = Calculator.multiply(5, -3);
+        assertEquals(-15, product);
+    }
+    
+    
+
+    @Test
+    @DisplayName("divide two numbers")
+    public void testDivision() {
+        final Integer quotient = Calculator.divide(8, 4);
+        assertEquals(2, quotient);
+    }
+
+    @Test
+    @DisplayName("divide two positive numbers") // dividing two poistive numbers
+    public void testDividePositiveNumbers() {
+        final Integer quotient = Calculator.divide(6, 3);
+        assertEquals(2, quotient);
+   }
+
+    @Test
+    @DisplayName("divide a number by zero") // dividing a number by zero
+    public void testDivideByZero() {
+        assertThrows(ArithmeticException.class, () -> Calculator.divide(5, 0));
+   }
+
+   @Test
+   @DisplayName("divide a negative number by a positive number") // dividing a negative number by a positive number
+   public void testDivideNegativeByPositive() {
+       final Integer quotient = Calculator.divide(-6, 3);
+        assertEquals(-2, quotient);
+   }
+
+   @Test
+   @DisplayName("divide a positive number by a negative number") // dividing a positive number by a negative number
+   public void testDividePositiveByNegative() {
+       final Integer quotient = Calculator.divide(6, -3);
+       assertEquals(-2, quotient);
+   }
+
+  @Test
+  @DisplayName("divide two negative numbers") // dividing two negative numbers
+  public void testDivideNegativeNumbers() {
+      final Integer quotient = Calculator.divide(-6, -3);
+      assertEquals(2, quotient);
+   }    
+
 }
